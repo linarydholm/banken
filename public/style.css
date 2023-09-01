@@ -1,0 +1,182 @@
+/* root */
+:root{
+    /* margin & padding */
+    --xxs: 4px;
+    --xs: 8px;
+    --s: 12px;
+    --m: 24px;
+    --l: 36px;
+    /* colors */
+    --first-dark-turq: #52aea3;
+    --dark-turq: #4ca298;
+    --light-turq: #aeddcb;
+    --light: #f7f8f3;
+    --green: #aadf87;
+    --yellow: #dfcf87;
+    --red: #df8787;
+
+    --text-light: white;
+    --text-dark: #252525;
+
+    /* flex */
+    --row-col: row;
+    --col-row: column;
+    --row-colReverse: row;
+    /* other */
+    --border-radius: 8px;
+    --box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
+}
+@media(max-width: 800px){
+    :root{
+        --row-col: column;
+        --col-row: row;
+        --row-colReverse: column-reverse;
+    }
+}
+
+/* global */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: var(--light);
+}
+
+/* font */
+h1{
+    font-size: 32px;
+    margin-bottom: var(--s);
+}
+h1.all{
+    color: var(--text-light);
+}
+h2{
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+/* flex */
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.flex-col-row{
+    display: flex;
+    flex-direction: var(--col-row);
+}
+.flex-row-col{
+    display: flex;
+    flex-direction: var(--row-col);
+}
+.flex-row-colReverse{
+    display: flex;
+    flex-direction: var(--row-colReverse);
+}
+
+/* index.ejs */
+div.largeContainer{
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+div.largeContainer > div{
+    width: 100%;
+}
+div.sectionTwo{
+    position: sticky;
+    top: 0;
+    background: var(--light);
+}
+
+/* form.ejs */
+div#accountForm{
+    margin: var(--s);
+    border-radius: var(--border-radius);
+    background: var(--dark-turq);
+    color: var(--text-light);
+    padding: var(--s);
+    box-shadow: var(--box-shadow);
+}
+div.accountForm{
+    color: var(--text-dark);
+    font-weight: 600;
+    border-radius: var(--border-radius);
+}
+label{
+    margin: var(--xs) 0 var(--xxs) 0;
+    letter-spacing: 0.4px;
+}
+input{
+    padding: var(--xs);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--light);
+}
+
+/* accounts.ejs */
+div#accounts{
+    margin: var(--s);
+    padding: var(--s);
+    background: var(--dark-turq);
+    color: var(--text-dark);
+    border-radius: var(--border-radius);
+    columns: var(--text-dark);
+    box-shadow: var(--box-shadow);
+}
+div.accountSection{
+    justify-content: space-between;
+}
+div.account{
+    margin-bottom: var(--s);
+    padding: var(--s);
+    background-color: var(--light-turq);
+    border-radius: var(--border-radius);
+}
+p.accountId{
+    margin: var(--xxs) 0;
+}
+p.amount{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* buttons */
+.btn{
+    padding: var(--xs) var(--m);
+    margin: var(--s) var(--s) 0 0;
+    background: var(--dark-turq);
+    color: var(--text-light);
+    border: 2px solid var(--text-light);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+.btn:hover{
+    background: var(--light-turq);
+    color: var(--text-dark);
+    box-shadow: var(--box-shadow)
+}
+.green-btn:hover{
+    background: var(--green);
+    color: var(--text-dark);
+}
+.yellow-btn:hover{
+    background: var(--yellow);
+    color: var(--text-dark);
+}
+.red-btn:hover{
+    background: var(--red);
+    color: var(--text-dark);
+}
+
+/* media */
+@media(max-width: 800px){
+    .btn{
+        padding: var(--xs) var(--s);
+    }
+}
